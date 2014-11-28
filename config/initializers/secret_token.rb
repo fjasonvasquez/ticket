@@ -1,0 +1,2 @@
+Ticket::Application.config.secret_key_base = '7548d746f62aac4193462d24acfd9a618cb25c528c011bccaeca204b1a2d31000323e482ecccd16486282028d8bd9334c04b9cb6c37bb83746f81200b48e1644
+'
