@@ -12,4 +12,4 @@ feature 'Creating Projects' do
 
 		expect(page).to have_content('Project has been created.')
 	end
-end
+end 
