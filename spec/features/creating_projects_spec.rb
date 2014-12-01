@@ -19,7 +19,7 @@ feature 'Creating Projects' do
 		expect(page.current_url).to eql(project_url(project))
 
 		title = "SublimeText 2 - Projects - Ticket"
-		expect(page).to have_title title
+		expect(page).to have_title(title)
 	end
 
 	scenario "can not create a project without a name" do
