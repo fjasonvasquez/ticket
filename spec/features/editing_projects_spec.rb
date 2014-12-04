@@ -4,13 +4,13 @@ feature "Editing Projects" do
 	before do
 		FactoryGirl.create(:project, name: "SublimeText 2")
 
-		visit '/'
+		visit "/"
 		click_link "SublimeText 2"
 		click_link "Edit Project"
 	end
 
 	scenario "Updating a project" do
-		fill_in "Name", with: "SublimeText 2 beta"
+		fill_in "Name", with: "Sublime Text 2 beta"
 		click_button "Update Project"
 
 		expect(page).to have_content("Project has been updated.")
