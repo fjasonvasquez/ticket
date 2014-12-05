@@ -9,11 +9,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
-		@project = Project.new(project_params)
-		@project.save
-	end
-
-	def show
+		@project = Project.new
 	end
 
 	def create
@@ -26,9 +22,6 @@ class ProjectsController < ApplicationController
 			flash[:alert] = "Project has not been created."
 			render "new"
 		end
-
-	def edit
-	end
 
 	def update
 		if @project.update(project_params)
@@ -43,6 +36,7 @@ class ProjectsController < ApplicationController
 	def destroy
 		@project.destroy
 
+
 		flash[:notice] = "Project has been destroyed."
 
 		redirect_to projects_path
@@ -52,6 +46,7 @@ class ProjectsController < ApplicationController
 	end
 
 private
+
 	def set_project
 		@project = Project.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
