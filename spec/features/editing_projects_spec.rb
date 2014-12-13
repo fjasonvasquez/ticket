@@ -5,7 +5,7 @@ feature "Editing Projects" do
 		FactoryGirl.create(:project, name: "Sublime Text 3")
 
 		visit "/"
-		click_link "Sublime Text 3"
+		click_link "SublimeText 2"
 		click_link "Edit Project"
 	end
 

@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
 			flash[:alert] = "Project has not been created."
 			render "new"
 		end
+	end
 
 	def update
 		if @project.update(project_params)
@@ -36,16 +37,12 @@ class ProjectsController < ApplicationController
 	def destroy
 		@project.destroy
 
-
 		flash[:notice] = "Project has been destroyed."
 
 		redirect_to projects_path
 	end
 
-	
-	end
-
-private
+	private
 
 	def set_project
 		@project = Project.find(params[:id])
@@ -55,8 +52,9 @@ private
 		redirect_to projects_path							
 	end
 
-		def project_params
-			params.require(:project).permit(:name, :description)
-		end
+	def project_params
+		params.require(:project).permit(:name, :description)
+	end
 end
+
 

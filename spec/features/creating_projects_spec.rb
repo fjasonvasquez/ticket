@@ -8,13 +8,13 @@ feature 'Creating Projects' do
 	end
 
 	scenario "can create a project" do
-		fill_in 'Name', with: 'Sublime Text 3'
+		fill_in 'Name', with: 'SublimeText 2'
 		fill_in 'Description', with: 'A text-editor for OS X'
 		click_button 'Create Project'
 
 		expect(page).to have_content('Project has been created.')
 
-		project = Project.where(name: "Sublime Text 3").first
+		project = Project.where(name: "SublimeText 2").first
 
 		expect(page.current_url).to eql(project_url(project))
 
